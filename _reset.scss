@@ -56,6 +56,11 @@ textarea,
 select {
         font: inherit;
 }
+// My Functions
+@function rem($i, $x:rem){
+ $math : calc($i/16);
+ @return #{$math}#{$x}
+}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {

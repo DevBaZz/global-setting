@@ -1,6 +1,56 @@
 @use './reset' as *;
 
-.svg_wiz{
-        width: 20px;
-        height: 20px;
+[role="list"] {
+        display: flex;
+        position: relative;
+        background-color: white;
+        border: 1px solid gray;
+        padding-block: rem(32);
+        isolation: isolate;
+}
+
+.progress {
+        position: relative;
+
+        &::after {
+                content: "";
+                background-color: bisque;
+                width: clamp(rem(4), 100%, 100%);
+                height: rem(4);
+                display: block;
+                position: absolute;
+                inset: 14% 0%;
+                z-index: 2;
+        }
+        &:nth-last-child(1)::after{
+                width: 0%;
+        }
+        
+        &:nth-last-child(1){
+        
+                h4{
+                        margin-right: 0;
+                }
+                
+                }
+}
+
+.svg_wiz {
+        width: rem(20);
+        height: rem(20);
+        z-index: 5;
+        position: relative;
+}
+
+.wiz {
+
+        h4 {
+                // Adjust the vh to increase or decrease the space btw elements
+                margin-right: min(4vw, rem(160));
+        }
+}
+
+.container {
+        max-width: 1120px;
+        margin: auto;
 }
